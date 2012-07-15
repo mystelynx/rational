@@ -44,5 +44,11 @@ class RationalSpec extends Specification {
       val twoThirds = new Rational(2, 3)
       oneHalf lessThan twoThirds must beTrue
     }
+
+    "have max(Rational) method" in {
+      val oneHalf = new Rational(1, 2)
+      val twoThirds = new Rational(2, 3)
+      oneHalf max twoThirds must_== twoThirds
+    }
   }
 }
