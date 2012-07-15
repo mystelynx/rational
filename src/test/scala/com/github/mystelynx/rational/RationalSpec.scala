@@ -57,5 +57,10 @@ class RationalSpec extends Specification {
       r.numer must_==  3
       r.denom must_==  1
     }
+
+    "normalize numor and denom" in {
+      val r = new Rational(66, 42)
+      r.toString must_== "11/7"
+    }
   }
 }
