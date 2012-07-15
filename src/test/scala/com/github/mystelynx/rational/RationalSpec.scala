@@ -38,5 +38,11 @@ class RationalSpec extends Specification {
       val twoThirds = new Rational(2, 3)
       (oneHalf add twoThirds).toString must equalTo("7/6")
     }
+
+    "have lessThan(Rational) method" in {
+      val oneHalf = new Rational(1, 2)
+      val twoThirds = new Rational(2, 3)
+      oneHalf lessThan twoThirds must beTrue
+    }
   }
 }
