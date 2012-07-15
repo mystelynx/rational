@@ -13,6 +13,7 @@ class Rational(n: Int, d: Int) {
   require(d != 0)
   val numer: Int = n
   val denom: Int = d
+  def this(n: Int) = this(n, 1)
   override def toString = numer + "/" + denom
 
   /*

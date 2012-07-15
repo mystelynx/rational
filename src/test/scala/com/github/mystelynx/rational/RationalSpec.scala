@@ -50,5 +50,12 @@ class RationalSpec extends Specification {
       val twoThirds = new Rational(2, 3)
       oneHalf max twoThirds must_== twoThirds
     }
+
+    "have auxiliary constructor that has 1 parameter" in {
+      val r = new Rational(3)
+      r must_!= null
+      r.numer must_==  3
+      r.denom must_==  1
+    }
   }
 }
