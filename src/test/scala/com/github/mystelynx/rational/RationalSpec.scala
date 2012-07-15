@@ -17,5 +17,10 @@ class RationalSpec extends Specification {
       val r = new Rational(1, 2)
       r must not equalTo(null)
     }
+
+    "have toString method" in {
+      val r1 = new Rational(1, 2)
+      r1.toString must equalTo("1/2")
+    }
   }
 }
