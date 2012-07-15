@@ -8,4 +8,6 @@ package com.github.mystelynx.rational
  * To change this template use File | Settings | File Templates.
  */
 
-class Rational(n: Int, d: Int)
+class Rational(n: Int, d: Int) {
+  println("Created " + n + "/" + d)
+}
