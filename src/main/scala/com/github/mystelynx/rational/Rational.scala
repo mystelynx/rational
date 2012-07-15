@@ -11,5 +11,18 @@ package com.github.mystelynx.rational
 class Rational(n: Int, d: Int) {
 
   require(d != 0)
-  override def toString = n + "/" + d
+  val numer: Int = n
+  val denom: Int = d
+  override def toString = numer + "/" + denom
+
+  /*
+    クラスパラメータはaddメソッドのスコープ内であるが、thatはaddメソッドのレシーバではなく、
+    n, dにアクセスできない。
+    クラスパラメータはフィールドではない。
+   */
+//  def add(that: Rational): Rational = {
+//    new Rational(n * that.d + that.n * d, d * that.d)
+//  }
+
+    def add(that: Rational): Rational = new Rational(numer * that.denom + that.numer * denom, denom * that.denom)
 }
