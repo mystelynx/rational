@@ -14,7 +14,8 @@ class RationalSpec extends Specification {
 
   "Rational class" should {
     "have 2 parameters to construct" in {
-      new Rational(1, 2) must not equals(null)
+      val r = new Rational(1, 2)
+      r must not equalTo(null)
     }
   }
 }
