@@ -27,6 +27,12 @@ class RationalSpec extends Specification {
       new Rational(5, 0) must throwAn[IllegalArgumentException]
     }
 
+    "have 2 fields" in {
+      val r = new Rational(1, 2)
+      r.numer must_== 1
+      r.denom must_== 2
+    }
+
     "have add(Rational) method" in {
       val oneHalf = new Rational(1, 2)
       val twoThirds = new Rational(2, 3)
