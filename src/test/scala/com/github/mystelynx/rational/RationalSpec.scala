@@ -22,5 +22,9 @@ class RationalSpec extends Specification {
       val r1 = new Rational(1, 2)
       r1.toString must equalTo("1/2")
     }
+
+    "occur exception to construct when denominator == 0" in {
+      new Rational(5, 0) must throwAn[IllegalArgumentException]
+    }
   }
 }
