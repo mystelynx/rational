@@ -33,10 +33,22 @@ class RationalSpec extends Specification {
       r.denom must_== 2
     }
 
-    "have add(Rational) method" in {
+    "have +(Rational) method" in {
       val oneHalf = new Rational(1, 2)
       val twoThirds = new Rational(2, 3)
-      (oneHalf add twoThirds).toString must equalTo("7/6")
+      (oneHalf + twoThirds).toString must equalTo("7/6")
+      (oneHalf.+(twoThirds).toString) must_==("7/6")
+    }
+
+    "have *(Rational) method" in {
+      val oneHalf = new Rational(1, 2)
+      val twoThirds = new Rational(2, 3)
+      (oneHalf * twoThirds).toString must_== "1/3"
+      (oneHalf.*(twoThirds).toString) must_== "1/3"
+
+      (oneHalf + oneHalf * twoThirds).toString must_== "5/6"
+      ((oneHalf + oneHalf) * twoThirds).toString must_== "2/3"
+      (oneHalf + (oneHalf * twoThirds)).toString must_== "5/6"
     }
 
     "have lessThan(Rational) method" in {
